@@ -973,7 +973,7 @@ if menu_id=="Price Forecast":
     fig1.add_scatter(x=results["Date"] ,y=results['Actual'], name="Actual")
 
     fig1.add_scatter(x=results["Date"], y=results['Forecast'], mode='lines', name= "5d Forecast")
-    fig1.update_layout( autosize=False,width=1600, height=800 )
+    fig1.update_layout( autosize=False,width=1800, height=800 )
 
     # Show plot
     st.write(fig1)
