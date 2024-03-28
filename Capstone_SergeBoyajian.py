@@ -964,7 +964,7 @@ if menu_id=="Price Forecast":
     df_future['Forecast'] = lst_output.flatten()
     df_future['Actual'] = np.nan
 
-    results = df_past.append(df_future).set_index('Date')
+    results = pd.concat([df_past, df_future]).set_index('Date')
 #Plot forecasts
 
     results= results.reset_index()#Plot S&P
