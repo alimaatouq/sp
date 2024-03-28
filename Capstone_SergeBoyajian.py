@@ -960,7 +960,7 @@ if menu_id=="Price Forecast":
     df_past['Forecast'].iloc[-1] = df_past['Actual'].iloc[-1]
 
     df_future = pd.DataFrame(columns=['Date', 'Actual', 'Forecast'])
-    df_future['Date'] = pd.date_range(start=df_past['Date'].iloc[-1] + pd.Timedelta(days=1), periods=5)
+    df_future['Date'] = pd.date_range(start=df_past['Date'].iloc[-1] + pd.Timedelta(days=1), periods=4)
     df_future['Forecast'] = lst_output.flatten()
     df_future['Actual'] = np.nan
 
@@ -973,7 +973,7 @@ if menu_id=="Price Forecast":
     fig1.add_scatter(x=results["Date"] ,y=results['Actual'], name="Actual")
 
     fig1.add_scatter(x=results["Date"], y=results['Forecast'], mode='lines', name= "5d Forecast")
-    fig1.update_layout( autosize=False,width=1800, height=800 )
+    fig1.update_layout( autosize=False,width=1600, height=800 )
 
     # Show plot
     st.write(fig1)
